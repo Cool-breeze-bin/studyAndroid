@@ -28,6 +28,7 @@ public class FileStorageActivity extends AppCompatActivity implements View.OnCli
         btn_load_outer = findViewById(R.id.load_outer);
         btn_load_outer.setOnClickListener(this);
 
+        //
     }
 
 
