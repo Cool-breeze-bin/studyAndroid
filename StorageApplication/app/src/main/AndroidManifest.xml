@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StorageApplication">
+        <activity android:name=".SharePreferencesMainActivity"></activity>
         <activity android:name=".FileStorageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
