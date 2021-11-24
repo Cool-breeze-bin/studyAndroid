@@ -40,8 +40,8 @@ public class SharePreferencesMainActivity extends AppCompatActivity implements V
                 SharedPreferences preferences1 = getSharedPreferences("userInfo",MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences1.edit();
 
-                editor.putStringSet("username", Collections.singleton(username_rgs));
-                editor.putStringSet("password", Collections.singleton(password_rgs));
+                editor.putString("username", username_rgs);
+                editor.putString("password", password_rgs);
                 editor.apply();
                 Toast.makeText(SharePreferencesMainActivity.this,"注册成功!",Toast.LENGTH_SHORT).show();
                 break;
