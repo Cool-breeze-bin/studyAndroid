@@ -13,8 +13,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_choose_area);
-//        SQLiteDatabase db = LitePal.getDatabase();
-//        LitePal.getDatabase();
+        setContentView(R.layout.activity_main);
+        LitePal.getDatabase();
     }
 }
