@@ -1,25 +1,51 @@
 package com.fbb.notepadapplication;
 
-import android.os.Bundle;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
-public class NoteAdapter extends AppCompatActivity {
-    private TextView date,title,content;
+import java.util.List;
+
+public class NoteAdapter extends ArrayAdapter<Note> {
+    private final int resourceId;
+
+    public NoteAdapter(@NonNull Context context, int resource, @NonNull List<Note> objects, int resourceId) {
+        super(context, resource, objects);
+        this.resourceId = resourceId;
+    }
+
+    @NonNull
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.note_item);
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        Note note = getItem(position);
+        View view;
+        ViewHolder viewHolder;
+        if (convertView==null){
+            view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
+            viewHolder = new ViewHolder();
+            viewHolder.noteTitle = view.findViewById(R.id.note_title);
+            viewHolder.noteDate = view.findViewById(R.id.note_date);
+            viewHolder.noteContent = view.findViewById(R.id.note_content);
+            view.setTag(viewHolder);
+        }else{
+            view = convertView;
+            viewHolder = (ViewHolder)view.getTag();
+        }
+        viewHolder.noteTitle.setText(note.getTitle());
+        viewHolder.noteDate.setText(note.getDate());
+        viewHolder.noteContent.setText(note.getContent());
+        return view;
+    }
 
-        date = findViewById(R.id.note_date);
-        date.setText("");
-
-        title = findViewById(R.id.note_title);
-        title.setText("");
-        
-        content = findViewById(R.id.note_content);
-        content.setText("");
-
+    class ViewHolder{
+        TextView noteTitle;
+        TextView noteDate;
+        TextView noteContent;
     }
 }
