@@ -12,6 +12,14 @@ public class NoteAdapter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.note_item);
 
+        date = findViewById(R.id.note_date);
+        date.setText("");
+
+        title = findViewById(R.id.note_title);
+        title.setText("");
+        
+        content = findViewById(R.id.note_content);
+        content.setText("");
 
     }
 }
