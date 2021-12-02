@@ -9,7 +9,7 @@ public class County extends LitePalSupport {
     @Column(index = true)
     private String countyName;
     @Column(index = true)
-    private String weatherId;
+    private int weatherId;
     @Column(index = true)
     private int cityId;
 
@@ -29,11 +29,11 @@ public class County extends LitePalSupport {
         this.countyName = countyName;
     }
 
-    public String getWeatherId() {
+    public int getWeatherId() {
         return weatherId;
     }
 
-    public void setWeatherId(String weatherId) {
+    public void setWeatherId(int weatherId) {
         this.weatherId = weatherId;
     }
 
