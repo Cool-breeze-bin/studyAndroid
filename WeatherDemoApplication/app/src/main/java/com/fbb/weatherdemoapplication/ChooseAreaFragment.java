@@ -35,7 +35,6 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-import static android.content.ContentValues.TAG;
 
 
 public class ChooseAreaFragment extends Fragment {
