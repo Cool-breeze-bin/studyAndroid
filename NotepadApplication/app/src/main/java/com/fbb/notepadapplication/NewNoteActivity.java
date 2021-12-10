@@ -2,6 +2,7 @@ package com.fbb.notepadapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -23,6 +24,7 @@ public class NewNoteActivity extends AppCompatActivity {
 //
         edit_Title = findViewById(R.id.edit_title);
         edit_Content = findViewById(R.id.edit_content);
+
         addNew = findViewById(R.id.add_new);
         addNew.setOnClickListener(new View.OnClickListener() {
             @Override

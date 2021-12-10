@@ -15,10 +15,11 @@ import java.util.List;
 public class NoteAdapter extends ArrayAdapter<Note> {
     private final int resourceId;
 
-    public NoteAdapter(@NonNull Context context, int resource, @NonNull List<Note> objects, int resourceId) {
-        super(context, resource, objects);
+    public NoteAdapter(@NonNull Context context, int resourceId, @NonNull List<Note> objects) {
+        super(context, resourceId, objects);
         this.resourceId = resourceId;
     }
+
 
     @NonNull
     @Override
